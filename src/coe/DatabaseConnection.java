@@ -18,7 +18,8 @@ import javax.servlet.http.HttpSession;
 public class DatabaseConnection {
 	
 	public static Connection getDatabaseConnection() {
-		 Connection con=null;
+	//adding comment
+		Connection con=null;
 		try {
             // TODO code application logic here
             //step1 load the driver class
