@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<!--include jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" 
+type="text/javascript"></script>
+
+<!--include jQuery Validation Plugin-->
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js" 
+type="text/javascript"></script>
+
+<!--Optional: include only if you are using the extra rules in additional-methods.js -->
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/additional-methods.min.js" 
+type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+    $("#registerForm").validate({
+    rules :{
+    	employee_id : {
+            required : true
+        },
+        pwd : {
+        required : true
+    },
+    first_name : {
+        required : true
+    },
+    last_name : {
+        required : true
+    },
+    email_id : {
+        required : true,
+        email: true
+    },
+    mobile_no : {
+        required : true,
+        number: true,
+		  minlength: 10,
+		  maxlength: 10
+    }   
+    },
+    messages :{
+    	employee_id : {
+            required : '*Enter Employee ID'
+        },
+        pwd : {
+        required : '*Enter Password'
+    },
+    first_name : {
+        required : '*Enter First Name'
+    },
+    last_name : {
+        required : '*Enter Last Name'
+    },
+    email_id : {
+        required : '*Enter Email ID'
+    },
+    mobile_no : {
+        required : '*Enter Mobile No',
+        number: '*Enter only numeric',
+		  minlength: '*enter 10 digits',
+		  maxlength: '*enter 10 digits'
+    }   
+    }
+    });
+});
+</script>
+<style>
+ .error {
+      color: red;
+   }
+</style>
+</head>
+<body>
+<h1>CAD Employee Registration Form</h1>
+<form action="register.do" method="post"  id="registerForm">
+<table>
+<tr>
+<td>Enter Employee ID: </td>
+<td><input type="text" name="employee_id"/></td>
+</tr>
+<tr>
+<td>Create Password </td>
+<td><input type="password" name="pwd"/></td>
+</tr>
+<tr>
+<td>Enter First Name:</td>
+<td> <input type="text" name="first_name"/></td>
+</tr>
+<tr>
+<td>Enter Last Name:</td>
+<td> <input type="text" name="last_name"/></td>
+</tr>
+<tr>
+<td>Enter Email ID:</td>
+<td> <input type="text" name="email_id"/></td>
+</tr>
+<tr>
+
+<td>Enter Mobile No: </td>
+<td><input type="text" name="mobile_no"/></td>
+</tr>
+</table>
+<input type="submit" value="register"/>
+</form>
+</body>
+</html>
